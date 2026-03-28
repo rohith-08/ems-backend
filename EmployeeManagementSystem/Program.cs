@@ -1,11 +1,21 @@
-﻿namespace EmployeeManagementSystem
+﻿using EmployeeManagementSystem;
+namespace EmployeeManagementSystem
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Day 1 of project is Done!");
-            Console.WriteLine("Project has started!!!!");
+            Employee emp = new Employee();
+            emp.SetName("Rohith");
+            emp.SetSalary(30000);
+            emp.DisplayInfo();
+            Manager mgr = new Manager();
+            mgr.SetName("Suresh");
+            mgr.SetSalary(100000);
+            mgr.SetTeamSize(5);
+            mgr.DisplayInfo();
+
+            Console.WriteLine("Day 2 of project Done!");
         }
     }
 }
