@@ -7,6 +7,8 @@ namespace EmployeeManagementSystem
 {
     public class Employee: BaseEmployee, IEmployee
     {
+
+        private string _departmentName = string.Empty;
         private double _salary;
         public void SetSalary(double salary)
         {
@@ -29,6 +31,12 @@ namespace EmployeeManagementSystem
         {
             return _salary;
         }
+
+        public void SetDepartmentName(string name)
+        {
+            _departmentName = name;
+        }
+        public string GetDepartmentName()=> _departmentName;
 
 
     }
