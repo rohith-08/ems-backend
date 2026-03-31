@@ -1,4 +1,7 @@
-﻿namespace EmployeeManagementSystem
+﻿using System;
+using System.Threading.Tasks;
+
+namespace EmployeeManagementSystem
 {
     internal class Program
     {
