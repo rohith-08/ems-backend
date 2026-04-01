@@ -1,53 +1,47 @@
-﻿using System;
-using System.Threading.Tasks;
-
+﻿
 namespace EmployeeManagementSystem
 {
     internal class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
-            // Day 2 - OOP
-            Employee emp = new Employee();
-            emp.SetName("Rohith");
-            emp.SetSalary(30000);
-            emp.DisplayInfo();
+            Console.WriteLine("----Reverse String--");
+            Console.WriteLine(ReverseString("Rohith"));
 
-            Manager mgr = new Manager();
-            mgr.SetName("Suresh");
-            mgr.SetSalary(100000);
-            mgr.SetTeamSize(5);
-            mgr.DisplayInfo();
 
-            // Day 5 - Async
-            await LoadEmployeesAsync();
-            await SaveEmployeesAsync();
+            static string ReverseString (string str)
+            {
+                char[] chars = str.ToCharArray();
+                Array.Reverse(chars);  
+                return new string(chars);
 
-            int count = await GetEmployeeCountAsync();
-            Console.WriteLine($"Total Employees: {count}");
+            }
+            //example of fizzbuzz
+             Console.WriteLine("----FizzBuzz--");
+            for (int i = 1; i <= 100; i++)
+            {
+                if (i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.WriteLine("FizzBuzz");
+                }
+                else if (i % 3 == 0)
+                {
+                    Console.WriteLine("Fizz");
+                }
+                else if (i % 5 == 0)
+                {
+                    Console.WriteLine("Buzz");
+                }
+                else
+                {
+                    Console.WriteLine(i);
+                }
+            }
 
-            Console.WriteLine("\n Day 5 Completed!!!");
+
         }
 
-        static async Task LoadEmployeesAsync()
-        {
-            Console.WriteLine("Loading employee from database...");
-            await Task.Delay(2000);
-            Console.WriteLine("Employee loaded successfully!");
-        }
 
-        static async Task SaveEmployeesAsync()
-        {
-            Console.WriteLine("Saving employees...");
-            await Task.Delay(1000);
-            Console.WriteLine("Employees saved successfully!");
-        }
-
-        static async Task<int> GetEmployeeCountAsync()
-        {
-            Console.WriteLine("Fetching employee count...");
-            await Task.Delay(1500);
-            return 5;
-        }
-    }
+       
+      }
 }
